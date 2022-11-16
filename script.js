@@ -1,4 +1,4 @@
-const dev = false;
+const dev = true;
 
 const addButton = document.getElementById('add-button');
 const itemInput = document.getElementById('to-do-input');
@@ -48,6 +48,9 @@ function init(){
 function createForm(form){
     const entry = document.createElement('div');
 
+    const info = document.createElement('div');
+    info.classList.add('task-info');
+
     const title = document.createElement('p');
     title.innerHTML = form.name;
     title.classList.add('task-title');
@@ -67,8 +70,33 @@ function createForm(form){
     dateAndTime.appendChild(time);
     dateAndTime.classList.add('task-date-and-time');
 
-    entry.appendChild(title);
-    entry.appendChild(dateAndTime);
+    info.appendChild(title);
+    info.appendChild(dateAndTime);
+
+    const buttons = document.createElement('div');
+    buttons.classList.add('task-buttons');
+
+    const completeIcon = document.createElement('img');
+    completeIcon.src = "./assets/complete-icon.png";
+    completeIcon.classList.add('task-complete-icon');
+    buttons.appendChild(completeIcon);
+
+    completeIcon.addEventListener('click', () => {
+        title.innerHTML = title.innerHTML.strike();
+        completeIcon.style.display = 'none';
+    })
+
+    const deleteIcon = document.createElement('img');
+    deleteIcon.src = "./assets/delete-icon.png";
+    deleteIcon.classList.add('task-delete-icon');
+    buttons.appendChild(deleteIcon);
+
+    deleteIcon.addEventListener('click', () => {
+        taskMain.removeChild(entry);
+    })
+
+    entry.appendChild(info);
+    entry.appendChild(buttons);
     entry.classList.add('task-entry');
 
     taskMain.appendChild(entry);

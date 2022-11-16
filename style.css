@@ -166,7 +166,7 @@ body {
 
 .task-entry {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     margin: 0 0 5px 0;
     border-radius: 10px;
     color: var(--background-color);
@@ -193,6 +193,20 @@ body {
     margin: 0 0 0 20px;
     color: var(--secondary-color);
     font-size: 0.7em;
+}
+
+.task-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-complete-icon {
+    width: 40px;
+}
+
+.task-delete-icon {
+    width: 40px;
 }
 
 .red-border{
