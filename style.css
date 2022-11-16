@@ -172,6 +172,8 @@ body {
     color: var(--background-color);
     font-size: 1.4em;
     font-family: 'Poppins';
+    border-bottom: 4px solid var(--secondary-color);
+    transition: all 0.1s linear 0s;
 }
 
 .task-date-and-time {
@@ -205,8 +207,16 @@ body {
     width: 40px;
 }
 
+.task-complete-icon:hover {
+    content:url("./assets/complete-icon-green.png");
+}
+
 .task-delete-icon {
     width: 40px;
+}
+
+.task-delete-icon:hover {
+    content: url("./assets//delete-icon-red.png");
 }
 
 .red-border{
@@ -227,4 +237,27 @@ body {
 
 .red-background {
     background-color: var(--note-red-color);
+}
+
+@keyframes strike{
+    0%   { width : 0; }
+    100% { width: 100%; }
+}
+
+.strike {
+    position: relative;
+}
+  .strike::after {
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: black;
+    animation-name: strike;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; 
 }

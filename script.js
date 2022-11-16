@@ -1,4 +1,4 @@
-const dev = false;
+const dev = true;
 
 const addButton = document.getElementById('add-button');
 const itemInput = document.getElementById('to-do-input');
@@ -26,9 +26,15 @@ function init(){
     })
 
     clearButton.addEventListener('click', () => {
-        while (taskMain.firstChild) {
-            taskMain.removeChild(taskMain.firstChild);
+        for (let i = 0; i < taskMain.children.length; i++){
+            taskMain.children[i].style.transform = "translate(-101%, 2px)";
         }
+
+        delay(200).then(() => {
+            while(taskMain.firstChild) {
+                taskMain.removeChild(taskMain.firstChild);
+            }
+        })
     })
 
 
@@ -82,7 +88,8 @@ function createForm(form){
     buttons.appendChild(completeIcon);
 
     completeIcon.addEventListener('click', () => {
-        title.innerHTML = title.innerHTML.strike();
+        // title.innerHTML = title.innerHTML.strike();
+        title.classList.add('strike');
         completeIcon.style.display = 'none';
     })
 
@@ -92,7 +99,7 @@ function createForm(form){
     buttons.appendChild(deleteIcon);
 
     deleteIcon.addEventListener('click', () => {
-        taskMain.removeChild(entry);
+        deleteChild(entry);
     })
 
     entry.appendChild(info);
@@ -100,6 +107,15 @@ function createForm(form){
     entry.classList.add('task-entry');
 
     taskMain.appendChild(entry);
+}
+
+function deleteChild(entry) {
+    entry.style.transform = "translate(-101%, 2px)";
+    delay(200).then(() => taskMain.removeChild(entry));
+}
+
+function delay(time){
+    return new Promise(resolve => setTimeout(resolve, time));
 }
 
 function getRadioButtonValue() {
