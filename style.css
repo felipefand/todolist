@@ -8,6 +8,10 @@
     --note-green-color: #BAFFC9;
     --note-yellow-color: #FFFFBA;
     --note-red-color: #FFB3BA;
+
+    --note-green-color-border: #8CBE97;
+    --note-yellow-color-border: #D2D292;
+    --note-red-color-border: #D19398;
 }
 
 * {
@@ -172,7 +176,7 @@ body {
     color: var(--background-color);
     font-size: 1.4em;
     font-family: 'Poppins';
-    border-bottom: 4px solid var(--secondary-color);
+    /* border-bottom: 4px solid var(--secondary-color); */
     transition: all 0.1s linear 0s;
 }
 
@@ -237,6 +241,18 @@ body {
 
 .red-background {
     background-color: var(--note-red-color);
+}
+
+.green-border-bottom {
+    border-bottom: 4px solid var(--note-green-color-border);
+}
+
+.yellow-border-bottom {
+    border-bottom: 4px solid var(--note-yellow-color-border);
+}
+
+.red-border-bottom {
+    border-bottom: 4px solid var(--note-red-color-border);
 }
 
 @keyframes strike{

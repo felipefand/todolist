@@ -1,4 +1,4 @@
-const dev = true;
+const dev = false;
 
 const addButton = document.getElementById('add-button');
 const itemInput = document.getElementById('to-do-input');
@@ -71,6 +71,7 @@ function createForm(form){
     time.classList.add('task-time');
 
     entry.classList.add(`${form.color}-background`);
+    entry.classList.add(`${form.color}-border-bottom`);
 
     dateAndTime.appendChild(date);
     dateAndTime.appendChild(time);
@@ -88,7 +89,6 @@ function createForm(form){
     buttons.appendChild(completeIcon);
 
     completeIcon.addEventListener('click', () => {
-        // title.innerHTML = title.innerHTML.strike();
         title.classList.add('strike');
         completeIcon.style.display = 'none';
     })
