@@ -5,8 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Front-End-Dinâmico_Exercício-02</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="add-section">
+        <div class="to-be standard-font">
+            <p>What is to be done?</p>
+                <input id="to-do-input" class="text-input" type="text">
+        </div>
+        
+        <div class="due-date standard-font">
+            <p>Due date</p>
+            <input id="date-input" class="date-and-time-input" type="date">
+            <input id="time-input" class="date-and-time-input" type="time">
+        </div>
+                
+        <div class="radio-buttons">
+            <label>
+                <input type="radio" name="color" value="green">
+                <img class="img" src="./assets/green-note.png" alt="">
+            </label>
+            <label>
+                <input type="radio" name="color" value="yellow">
+                <img class="img" src="./assets/yellow-note.png" alt="">
+            </label>
+            <label>
+                <input type="radio" name="color" value="red">
+                <img class="img" src="./assets/red-note.png" alt="">
+            </label>
+        </div>
+                
+        <button id="add-button">Add</button>
+    </div>
+        
+    <div class="task-section">
+        <div class="task-header">
+            <h1 class="standard-font">Task Manager</h1>
+        </div>
+
+        <div id="task-main" class="task-main">
+
+        </div>
+
+        <div class="task-footer">
+            <button id="clear-all-button">Clear all</button>
+        </div>
+    </div>
 </body>
 </html>

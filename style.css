@@ -1,0 +1,216 @@
+:root {
+    --background-color: #1C273C;
+    --primary-color: #354259;
+    --secondary-color: #44A0A0;
+    --tertiary-color: #FFFFFF;
+    --font-color: #F0EAD6;
+
+    --note-green-color: #BAFFC9;
+    --note-yellow-color: #FFFFBA;
+    --note-red-color: #FFB3BA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.standard-font {
+    color: var(--font-color);
+    font-size: 1.4em;
+    font-family: 'Poppins';
+}
+
+.add-section {
+    height: 30%;
+    width: 15%;
+    border-radius: 10px;
+    position: relative;
+    bottom: 15%;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.to-be {
+    margin: 0 0 0 5px;
+}
+
+.text-input {
+    font-size: 0.9em;
+    width: 95%;
+    border: 2px solid var(--primary-color);
+    color: var(--background-color);
+    background-color: var(--tertiary-color);
+}
+
+.text-input:focus,
+.text-input:hover {
+    border: 2px solid var(--secondary-color);
+    outline: none;
+}
+
+.due-date {
+    margin: 0 0 0 5px;
+}
+
+.date-and-time-input {
+    font-size: 0.8em;
+    border: 2px solid var(--primary-color);
+    color: var(--background-color);
+    background-color: var(--tertiary-color);
+}
+
+.date-and-time-input:focus,
+.date-and-time-input:hover {
+    border: 2px solid var(--secondary-color);
+    outline: none;
+}
+
+.radio-buttons {
+    margin: 5px 0 0 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.radio-buttons img{
+    width: 60px;
+}
+
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+[type=radio]:checked + img {
+    outline: 2px solid var(--secondary-color);
+}
+
+.add-section img:hover {
+    outline: 2px solid var(--secondary-color);
+}
+
+.add-section button {
+    align-self: flex-end;
+    margin: auto 15px 15px 0;
+    font-size: 1.2em;
+    width: 80px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    transition: all 0.2s linear 0s;
+}
+
+.add-section button:hover{
+    background-color: var(--background-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.task-section {
+    border-radius: 10px;
+    height: 80%;
+    width: 30%;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    margin: 2px;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.task-header {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-main {
+    align-self: center;
+    height: 85%;
+    width: 85%;
+    overflow: auto;
+}
+
+.task-footer {
+    height: 5%;
+    display: flex;
+    justify-content: right;
+}
+
+.task-footer button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    font-size: 1.5em;
+    margin-right: 50px;
+}
+
+.task-footer button:hover{
+    text-decoration: underline;
+}
+
+.task-entry {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 5px 0;
+    border-radius: 10px;
+    color: var(--background-color);
+    font-size: 1.4em;
+    font-family: 'Poppins';
+}
+
+.task-date-and-time {
+    display: flex;
+    flex-direction: row;
+}
+
+.task-title {
+    margin: 5px 0 0 5px;
+}
+
+.task-date {
+    margin: 0 0 0 5px;
+    color: var(--secondary-color);
+    font-size: 0.7em;
+}
+
+.task-time {
+    margin: 0 0 0 20px;
+    color: var(--secondary-color);
+    font-size: 0.7em;
+}
+
+.red-border{
+    border: 1px solid red;
+}
+
+.red-outline {
+    outline: 2px solid red;
+}
+
+.green-background {
+    background-color: var(--note-green-color);
+}
+
+.yellow-background {
+    background-color: var(--note-yellow-color);
+}
+
+.red-background {
+    background-color: var(--note-red-color);
+}
