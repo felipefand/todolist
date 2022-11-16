@@ -1,4 +1,4 @@
-const dev = true;
+const dev = false;
 
 const addButton = document.getElementById('add-button');
 const itemInput = document.getElementById('to-do-input');
